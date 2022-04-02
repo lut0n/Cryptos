@@ -14,7 +14,7 @@ def getkey():
 	return userInput
 #File system
 def File():
-    with open(getTextInput(), 'r') as f:
+    with open(getTextInput(), 'r', encoding='utf-8') as f:
         global text
         global UseFile
         UseFile = True
@@ -71,7 +71,7 @@ def Decode_Com(msg):
     if not UseFile:
         TextInput.insert(tk.END, out)
     if UseFile:
-        with open('Export.txt', 'w', encodeing='utf-8') as f:
+        with open('Export.txt', 'w', encoding='utf-8') as f:
             f.write(out)
             f.close()
 def Decode():
