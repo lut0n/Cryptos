@@ -48,9 +48,10 @@ def Encode_Com(msg):
     if UseFile:
         with open('Export.txt', 'w', encoding='utf-8') as f:
             f.write(out)
-            f.close()
+            f.close()       
 def Encode():
     Encode_Com(text)
+    TextInput.insert('0', END)
 def Decode_Com(msg):
     out = ''
     key = getkey()
@@ -76,6 +77,7 @@ def Decode_Com(msg):
             f.close()
 def Decode():
     Decode_Com(text)
+    TextInput.insert('0', END)
 #Tkinter
 root = Tk()
 
@@ -100,8 +102,8 @@ TextInput.place(x=90, y=140)
 Key=Entry(root, bg='#ffcccc')
 Key.place(x=90, y=80)
 
-Label(root, text='key:', bg='#750000').place(x=120, y=50)
+Label(root, text='key:', bg='#750000').place(x=135, y=50)
 
-Label(root, text='text:', bg='#750000').place(x=120, y=100)
+Label(root, text='text:', bg='#750000').place(x=135, y=110)
 root.iconbitmap('Logo.ico')
 root.mainloop()
