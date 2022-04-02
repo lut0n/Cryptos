@@ -1,0 +1,4 @@
+Key is inputed in the window no matter what.
+For the text, if you want to input in the window you click File_Of, then input your text in the window and click encode/decode.
+If you want to use a text file as input and output, put the text file name (including .txt extencion) in the text input, click File then encode/decode, the output will
+be in an Export.txt file in the same directory of the python file.
