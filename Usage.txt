@@ -2,9 +2,12 @@ Key is inputed in the window no matter what.
 For the text, if you want to input in the window you click File_Of, then input your text in the window and click encode/decode.
 If you want to use a text file as input and output, put the text file name (including .txt extencion) in the text input, click File then encode/decode, the output will
 be in an Export.txt file in the same directory of the python file.
-
+*Key must be a positive integer
+*Text can be any utf-8 character
 
 Ключ вводиться у вікні незважаючи ні на що.
 Для тексту, якщо ви хочете ввести у вікні, клацніть File_Of, потім введіть текст у вікні та натисніть кодувати/декодувати.
 Якщо ви хочете використовувати текстовий файл як вхідний та вихідний файл, введіть ім’я текстового файлу (включно з розширенням .txt) у розділ text, натисніть «File», а потім закодований/декодований, результат буде
 бути у файлі Export.txt в тому самому каталозі що й файл python.
+*Ключ має бути додатнім натуральним числом
+*Текст може бути любим символом таблиці utf-8
