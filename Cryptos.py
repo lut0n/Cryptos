@@ -80,36 +80,28 @@ def Decode():
 root = Tk()
 
 root.geometry('300x250')
-root.configure(background='#FFFFFF')
+root.configure(background='#fa0000')
 root.title('Cryptos')
 
-Button(root, text='Decode', command=Decode).place(x=50, y=200)
+Button(root, text='Decode', command=Decode,bg='#750000').place(x=50, y=200)
 
-Button(root, text='Encode', command=Encode).place(x=150, y=200)
+Button(root, text='Encode', command=Encode,bg='#750000').place(x=150, y=200)
 
-Button(root, text='File', command=File).place(x=250, y=100)
-Button(root, text='File_Of', command=File_Of).place(x=250, y=150)
+Button(root, text='File', command=File, bg='#750000').place(x=250, y=100)
+Button(root, text='File_Of', command=File_Of, bg='#750000').place(x=250, y=150)
 
-Button(root, text='Exit', command=root.destroy).place(x=0, y=0)
+Button(root, text='Exit', command=root.destroy, bg='#ff4d4d').place(x=0, y=0)
 
-Label(root, text='Cryptos', bg='#FFFFFF').place(x=120, y=20)
+Label(root, text='Cryptos', bg='#750000').place(x=120, y=20)
 
-TextInput=Entry(root)
+TextInput=Entry(root, bg='#ffcccc')
 TextInput.place(x=90, y=140)
 
-Key=Entry(root)
+Key=Entry(root, bg='#ffcccc')
 Key.place(x=90, y=80)
 
-Label(root, text='key:', bg='#FFFFFF').place(x=120, y=50)
+Label(root, text='key:', bg='#750000').place(x=120, y=50)
 
-Label(root, text='text:', bg='#FFFFFF').place(x=120, y=100)
+Label(root, text='text:', bg='#750000').place(x=120, y=100)
+root.iconbitmap('Logo.ico')
 root.mainloop()
-
-
-
-
-
-
-
-
-
