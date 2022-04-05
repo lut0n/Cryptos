@@ -41,7 +41,7 @@ def Encode_Com(msg):
         counter += int(key[c])
         c += 1
         out += chr(ord(i) + counter)
-    TextInput.delete('0', END)
+    TextInput.delete(0, END)
     global UseFile
     if not UseFile:
         TextInput.insert(tk.END, out)
@@ -51,7 +51,6 @@ def Encode_Com(msg):
             f.close()       
 def Encode():
     Encode_Com(text)
-    TextInput.insert('0', END)
 def Decode_Com(msg):
     out = ''
     key = getkey()
@@ -67,7 +66,7 @@ def Decode_Com(msg):
         counter += int(key[c])
         out += chr(ord(i)- counter)
         c += 1
-    TextInput.delete('0', END)
+    TextInput.delete(0, END)
     global UseFile
     if not UseFile:
         TextInput.insert(tk.END, out)
@@ -77,7 +76,6 @@ def Decode_Com(msg):
             f.close()
 def Decode():
     Decode_Com(text)
-    TextInput.insert('0', END)
 #Tkinter
 root = Tk()
 
@@ -105,5 +103,5 @@ Key.place(x=90, y=80)
 Label(root, text='key:', bg='#750000').place(x=135, y=50)
 
 Label(root, text='text:', bg='#750000').place(x=135, y=110)
-root.iconbitmap('Logo.ico')
+root.iconbintmap('Logo.ico')
 root.mainloop()
