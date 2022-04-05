@@ -39,6 +39,8 @@ def Encode_Com(msg):
             c = 0
         counter += 1
         counter += int(key[c])
+        counter += c * int(key[c])
+        counter -= c
         c += 1
         out += chr(ord(i) + counter)
     TextInput.delete(0, END)
@@ -64,6 +66,8 @@ def Decode_Com(msg):
             c = 0
         counter += 1
         counter += int(key[c])
+        counter += c * int(key[c])
+        counter -= c 
         out += chr(ord(i)- counter)
         c += 1
     TextInput.delete(0, END)
@@ -103,5 +107,6 @@ Key.place(x=90, y=80)
 Label(root, text='key:', bg='#750000').place(x=135, y=50)
 
 Label(root, text='text:', bg='#750000').place(x=135, y=110)
-root.iconbintmap('Logo.ico')
+root.iconbitmap('Logo.ico')
+
 root.mainloop()
