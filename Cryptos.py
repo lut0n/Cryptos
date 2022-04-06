@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import *
+import json
  
 text = ''
 UseFile = False
@@ -27,6 +28,9 @@ def File_Of():
     text = getTextInput()
 #Encoding funcitons
 def Encode_Com(msg):
+    with open('Log.json', 'r') as f:
+        log_object = json.loads(f.read())
+        f.close
     key = getkey()
     num = 1
     counter = 0
@@ -45,6 +49,11 @@ def Encode_Com(msg):
         out += chr(ord(i) + counter)
     TextInput.delete(0, END)
     global UseFile
+    log_object["Logs"] += [{"key":key, "text_input":msg, "text_output":out,"Encoding": True,"UseFile": UseFile}]    
+    log_object_out = json.dumps(log_object, indent=1)
+    with open('Log.json', 'w') as f:
+            f.write(log_object_out)
+            f.close()
     if not UseFile:
         TextInput.insert(tk.END, out)
     if UseFile:
@@ -54,6 +63,8 @@ def Encode_Com(msg):
 def Encode():
     Encode_Com(text)
 def Decode_Com(msg):
+    with open('Log.json', 'r') as f:
+        log_object = json.loads(f.read())
     out = ''
     key = getkey()
     num = 1
@@ -72,6 +83,11 @@ def Decode_Com(msg):
         c += 1
     TextInput.delete(0, END)
     global UseFile
+    log_object["Logs"] += [{"key":key, "text_input":msg, "text_output":out,"Encoding": False,"UseFile": UseFile}]    
+    log_object_out = json.dumps(log_object, indent=1)
+    with open('Log.json', 'w') as f:
+            f.write(log_object_out)
+            f.close()
     if not UseFile:
         TextInput.insert(tk.END, out)
     if UseFile:
@@ -107,6 +123,7 @@ Key.place(x=90, y=80)
 Label(root, text='key:', bg='#750000').place(x=135, y=50)
 
 Label(root, text='text:', bg='#750000').place(x=135, y=110)
+
 root.iconbitmap('Logo.ico')
 
 root.mainloop()
