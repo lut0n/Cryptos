@@ -45,6 +45,7 @@ def Encode_Com(msg):
         counter += int(key[c])
         counter += c * int(key[c])
         counter -= c
+	counter += (ord(i) * int(key[c])) / c
         c += 1
         out += chr(ord(i) + counter)
     TextInput.delete(0, END)
@@ -80,6 +81,7 @@ def Decode_Com(msg):
         counter += c * int(key[c])
         counter -= c 
         out += chr(ord(i)- counter)
+	counter += (ord(i) * int(key[c])) / c
         c += 1
     TextInput.delete(0, END)
     global UseFile
